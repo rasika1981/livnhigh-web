@@ -12,15 +12,21 @@ html {
     min-height: 100%;
 }
 
+@font-face {
+    font-family: bebas-neue-pro;
+    src: url('../font/BebasNeue-Regular.woff');
+}
+
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
     overflow: hidden;
     -webkit-user-drag: element;
+    font-family: bebas-neue-pro, sans-serif;
 }
 
 h1 {
-    font-size: 90px;
+    font-size: 8vw;
 }
 
 h2 {
@@ -109,6 +115,7 @@ section.active {
 .section-main-message {
     text-align: center;
     padding-top: 30vh;
+    text-transform: uppercase;
 }
 
 .section-main-image {
@@ -135,7 +142,6 @@ section.active {
 .section-product-name {
     float: left;
     font-size: 24px;
-    font-weight: bold;
 }
 
 .section-product-tagline-left {
@@ -169,8 +175,7 @@ section.active {
 }
 
 .section-product-type-info {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 25px;
     text-transform: uppercase;
 }
 
@@ -194,12 +199,12 @@ section.active {
 }
 
 .section-product-img {
-    width: 260px;
+    width: 250px;
     transition: width 0.3s;
 }
 
 .section-product-img:hover {
-    width: 270px;
+    width: 255px;
 }
 
 .section-product-detail-mobile {
@@ -226,7 +231,6 @@ section.active {
 .product-description-info {
     font-size: 14px;
     color: black;
-    font-weight: bold;
     padding: 5px;
     margin: 0px;
 }
@@ -285,7 +289,30 @@ section.active {
     background-color: black;
 }
 
-/********************************************* IPad *******************************************************************/
+/********************************************* medium tablet styles *******************************************************************/
+@media all and (max-width: 991px) {
+    
+    .section-product-name {
+        float: left;
+        font-size: 22px;
+    }
+
+    .section-product-type-info {
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+
+    .section-product-img {
+        width: 220px;
+        transition: width 0.3s;
+    }
+
+    .section-product-img:hover {
+        width: 222px;
+    }
+}
+
+/********************************************* medium tablet styles *******************************************************************/
 @media all and (max-width: 769px) {
     h1 {
         font-size: 72px;
@@ -306,16 +333,30 @@ section.active {
     .header {
         width: 97%;
     }
+
+    .section-product-name {
+        float: left;
+        font-size: 20px;
+    }
+
+    .section-product-type-info {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .section-product-type-img {
+        display: none;
+    }
 }
 
 /********************************************* IPad *******************************************************************/
 
-@media all and (max-width: 414px) {
-   h1 {
+@media all and (max-width: 479px) {
+    h1 {
         font-size: 48px;
-   }
-	
-	h2 {
+    }
+
+    h2 {
         font-size: 32px;
     }
 
@@ -330,21 +371,22 @@ section.active {
     .header {
         width: 96%;
     }
-	
-	.section-main-sub-message {
-		font-size: 16px;
-	}
-	
-	.facebookIcon {
+
+    .section-main-sub-message {
+        font-size: 16px;
+    }
+
+    .facebookIcon {
         content: url("../images/facebook_icon16.png");
     }
+
     .instagramIcon {
         content: url("../images/instagram_icon16.png");
     }
-	
-	.img-fluid {
-		content: url("../images/logo-mobile.png");
-	}
+
+    .img-fluid {
+        content: url("../images/logo-mobile.png");
+    }
 
     .section-main-image {
         background-image: url("../images/home-foreground-mobile.png");
@@ -356,7 +398,7 @@ section.active {
     }
 
     .section-product-img:hover {
-    width: 185px;
+        width: 185px;
     }
 
     .section-product-detail-mobile {
