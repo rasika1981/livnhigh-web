@@ -71,10 +71,12 @@ h4 {
     }
 .facebookIcon {
     padding-top: 5px;
+    vertical-align: top;
 }
 
 .instagramIcon {
     padding-top: 5px;
+    vertical-align: top;
 }
 /********************************************* Body Styles ***************************************************/
 a.navbar-brand {
