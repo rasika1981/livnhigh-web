@@ -60,7 +60,6 @@ h4 {
 }
 
     .header .social-media {
-        padding: 10px;
         text-align: right
     }
 
@@ -407,6 +406,7 @@ section.active {
 
     .facebookIcon {
         content: url("../images/facebook_icon16.png");
+        padding-top: 5px;
     }
 
     .instagramIcon {
