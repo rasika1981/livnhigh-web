@@ -231,7 +231,7 @@
                                 <p class="section-product-name">vodka and passionfruit with spakling water</p>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col text-center">
                             <img src="images/passionfruit-can.png" class="section-product-img" />
                         </div>
                         <div class="col">
@@ -431,7 +431,14 @@
     // tracks index of current section
     let currentSectionIndex = 0;
 
-    
+    document.addEventListener('ontouchmove', e => {
+        var x1 = event.touches[0].clientX;
+        var y1 = event.touches[0].clientY;
+        var x2 = event.touches[1].clientX;
+        var y2 = event.touches[1].clientY;
+        alert("X1: " + x1 + "Y1: " + y1 + "X2: " + x2 + "Y2: " + y2);
+       
+    });
 
     document.addEventListener('mousewheel', e => {
         /*
