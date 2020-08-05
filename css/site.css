@@ -69,12 +69,18 @@ h4 {
         font-size: 3vmin;
         text-align: center;
     }
+.facebookIcon {
+    padding-top: 5px;
+}
 
+.instagramIcon {
+    padding-top: 5px;
+}
 /********************************************* Body Styles ***************************************************/
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 /* Provide sufficient contrast against white background */
