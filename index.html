@@ -575,48 +575,27 @@
              
     });
 
+    var scrolled = 0;
     document.addEventListener('mousewheel', e => {
-        /*
-        if (e.wheelDeltaY > 0 && currentSectionIndex - 1 >= 0) {
-            // wheel up
-            $(".section-main-image").animate({ top: '0px', opacity: '0.5' }, 1000);
-            currentSectionIndex--;
-            if (currentSectionIndex == 0) {
-                $("#section-main-image").slideUp("slow");
-            }
-            else {
-                sections[currentSectionIndex].className = '';
-                currentSectionIndex--;
-                sections[currentSectionIndex].className = 'active';
-            }
+        
+        if (scrolled == 0) {
+            if (e.wheelDeltaY > 0) {
+                // wheel up
+                movingUp();
 
-    } else if (e.wheelDeltaY < 0 && currentSectionIndex + 1 < sections.length) {
-        // wheel down
-        $(".section-main-image").animate({ bottom: '100vh', opacity: '0' }, 1000);
-        //sections[currentSectionIndex].className = '';
-        currentSectionIndex++;
-        //sections[currentSectionIndex].className = 'active';
-    }
-         */
-
-        if (e.wheelDeltaY > 0) {
-            // wheel up
-            movingUp();
-            /*if (currentSectionIndex == 0) {
-                $("#section-main-image").slideUp("slow");
+            } else if (e.wheelDeltaY < 0) {
+                // wheel down
+                movingDown();
             }
-            else {
-                sections[currentSectionIndex].className = '';
-                currentSectionIndex--;
-                sections[currentSectionIndex].className = 'active';
-            }*/
-            
-        } else if (e.wheelDeltaY < 0) {
-            // wheel down
-            movingDown();
-            //sections[currentSectionIndex].className = '';
-            //sections[currentSectionIndex].className = 'active';
+            scrolled++
         }
+
+        clearTimeout($.data(this, 'scrollTimer'));
+        $.data(this, 'scrollTimer', setTimeout(function () {
+            // do something
+            scrolled = 0;
+        }, 250));
+        
     });
 </script>
 <script type="text/javascript">
