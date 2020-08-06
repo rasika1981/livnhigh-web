@@ -430,8 +430,9 @@
     let sections = document.getElementsByTagName('section');
     // tracks index of current section
     let currentSectionIndex = 0;
+    let currentY = 0;
 
-    void function movingUp() {
+    function movingUp() {
         if (currentSectionIndex == 1) {
             $("#vodkaRaspberry").stop(true, false).animate({ bottom: '100vh', opacity: '1' }, 1500);
             $("#ourStory").stop(true, false).fadeOut(1000, function () {
@@ -560,9 +561,18 @@
         }
     }
 
+    document.addEventListener('touchstart', e => {
+        currentY = e.touches[0].clientY;
+    });
+
     document.addEventListener('touchend', e => {
-        movingDown();
-       
+        if (e.changedTouches[0].pageY > currentY) {
+            movingUp();
+        }
+        else if (e.changedTouches[0].pageY < currentY) {            
+            movingDown();
+        }
+             
     });
 
     document.addEventListener('mousewheel', e => {
