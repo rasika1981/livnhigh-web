@@ -216,10 +216,6 @@ section.active {
     transition: width 0.3s;
 }
 
-.section-product-img:hover {
-    width: 255px;
-}
-
 .section-product-detail-mobile {
     display: none;
 }
@@ -314,140 +310,155 @@ section.active {
     background-color: black;
 }
 
-/********************************************* medium tablet styles *******************************************************************/
-@media all and (min-height: 991px) {
-    .product-description-panel {
-        bottom: 10vh;
-    }
-
-    .product-description-info {
-        font-size: 28px;
-    }
-}
-
-/********************************************* medium tablet styles *******************************************************************/
-@media all and (max-width: 991px) {
-    
-    .section-product-name {
-        float: left;
-        font-size: 22px;
-    }
-
-    .section-product-type-info {
-        font-size: 22px;
-        text-transform: uppercase;
-    }
-
+/********************************************* Big PC styles *******************************************************************/
+@media all and (max-width: 1500px) {
     .section-product-img {
-        width: 220px;
+        width: 300px;
         transition: width 0.3s;
     }
 
-    .section-product-img:hover {
-        width: 222px;
-    }
-}
-
-/********************************************* medium tablet styles *******************************************************************/
-@media all and (max-width: 769px) {
-    h1 {
-        font-size: 72px;
-    }
-
-    h2 {
-        font-size: 48px;
-    }
-
-    h3 {
-        font-size: 36px;
-    }
-
-    h4 {
-        font-size: 24px;
-    }
-
-    .header {
-        width: 97%;
-    }
-
-    .section-product-name {
-        float: left;
-        font-size: 20px;
-    }
-
-    .section-product-type-info {
-        font-size: 20px;
-        text-transform: uppercase;
-    }
-
-    .section-product-type-img {
-        display: none;
-    }
-}
-
-/********************************************* IPad *******************************************************************/
-
-@media all and (max-width: 479px) {
-    h1 {
-        font-size: 48px;
-    }
-
-    h2 {
-        font-size: 32px;
-    }
-
-    h3 {
-        font-size: 24px;
-    }
-
-    h4 {
-        font-size: 18px;
-    }
-
-    .header {
-        width: 96%;
-    }
-
-    .section-main-sub-message {
-        font-size: 16px;
-    }
-
-    .facebookIcon {
-        content: url("../images/facebook_icon16.png");
-        padding-top: 5px;
-    }
-
-    .instagramIcon {
-        content: url("../images/instagram_icon16.png");
-    }
-
-    .img-fluid {
-        content: url("../images/logo-mobile.png");
-    }
-
-    .section-main-image {
-        background-image: url("../images/home-foreground-mobile.png");
-    }
-
     .section-product-img {
-        width: 180px;
-        transition: width 0.3s;
-    }
-
-    .section-product-img:hover {
-        width: 185px;
-    }
-
-    .section-product-detail-mobile {
-        display: block
-    }
-
-    .section-product-detail-pc {
-        display: none;
+        font-size: 24px;
     }
 
     .section-product {
-        padding-top: 100px;
+        padding-top: 250px;
+    }
+
+    .section-product-name {
+        font-size: 35px;
+    }
+
+    .section-product-type-info {
+        font-size: 35px;
+    }
+
+    .product-description-info {
+        font-size: 24px;
     }
 }
+
+
+    /********************************************* medium tablet styles *******************************************************************/
+    @media all and (max-width: 991px) {
+
+        .section-product-name {
+            float: left;
+            font-size: 22px;
+        }
+
+        .section-product-type-info {
+            font-size: 22px;
+            text-transform: uppercase;
+        }
+
+        .section-product-img {
+            width: 220px;
+            transition: width 0.3s;
+        }
+
+    }
+
+    /********************************************* medium tablet styles *******************************************************************/
+    @media all and (max-width: 769px) {
+        h1 {
+            font-size: 72px;
+        }
+
+        h2 {
+            font-size: 48px;
+        }
+
+        h3 {
+            font-size: 36px;
+        }
+
+        h4 {
+            font-size: 24px;
+        }
+
+        .header {
+            width: 97%;
+        }
+
+        .section-product-name {
+            float: left;
+            font-size: 20px;
+        }
+
+        .section-product-type-info {
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+        .section-product-type-img {
+            display: none;
+        }
+    }
+
+    /********************************************* IPad *******************************************************************/
+
+    @media all and (max-width: 479px) {
+        h1 {
+            font-size: 48px;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+
+        h4 {
+            font-size: 18px;
+        }
+
+        .header {
+            width: 96%;
+        }
+
+        .section-main-sub-message {
+            font-size: 16px;
+        }
+
+        .facebookIcon {
+            content: url("../images/facebook_icon16.png");
+            padding-top: 5px;
+        }
+
+        .instagramIcon {
+            content: url("../images/instagram_icon16.png");
+        }
+
+        .img-fluid {
+            content: url("../images/logo-mobile.png");
+        }
+
+        .section-main-image {
+            background-image: url("../images/home-foreground-mobile.png");
+        }
+
+        .section-product-img {
+            width: 180px;
+            transition: width 0.3s;
+        }
+
+            .section-product-img:hover {
+                width: 185px;
+            }
+
+        .section-product-detail-mobile {
+            display: block
+        }
+
+        .section-product-detail-pc {
+            display: none;
+        }
+
+        .section-product {
+            padding-top: 100px;
+        }
+    }
 
