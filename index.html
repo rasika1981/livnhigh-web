@@ -431,8 +431,137 @@
     // tracks index of current section
     let currentSectionIndex = 0;
 
-    document.addEventListener('ontouchend', e => {
-        document.getElementById("homePanel").innerHTML = "";
+    void function movingUp() {
+        if (currentSectionIndex == 1) {
+            $("#vodkaRaspberry").stop(true, false).animate({ bottom: '100vh', opacity: '1' }, 1500);
+            $("#ourStory").stop(true, false).fadeOut(1000, function () {
+                //$(".section-main-image").css({ "display": "block" });
+                $("#wellcomeMsg").css({ "display": "block" });
+                $(".section-main-image").css({ "bottom": "100vh" });
+                $(".section-main-image").stop(true, false).animate({ bottom: '0vh', opacity: '1' }, 1500);
+            });
+            currentSectionIndex--;
+        }
+        else if (currentSectionIndex == 2) {
+            document.getElementById("vodkaRaspberry").style.display = "none";
+            $("#ourStory").stop(true, false).fadeIn(1000);
+            currentSectionIndex--;
+        }
+        else if (currentSectionIndex == 3) {
+            $("#applePear").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
+                sections[1].className = '';
+            });
+            sections[0].className = 'active';
+            document.getElementById("vodkaRaspberry").style.display = "block";
+            $(".section-main").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            currentSectionIndex--;
+        }
+        else if (currentSectionIndex == 4) {
+            $("#passionfruit").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
+                sections[2].className = '';
+            });
+            sections[1].className = 'active';
+            $("#applePear").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            currentSectionIndex--;
+        }
+        else if (currentSectionIndex == 5) {
+            $("#guavapink").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
+                sections[3].className = '';
+            });
+            sections[2].className = 'active';
+            $("#passionfruit").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            currentSectionIndex--;
+        }
+        else if (currentSectionIndex == 6) {
+            $("#pomegranate").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
+                sections[4].className = '';
+            });
+            sections[3].className = 'active';
+            $("#guavapink").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            currentSectionIndex--;
+        }
+        else if (currentSectionIndex == 7) {
+            $("#aboutUs").stop(true, false).animate({ top: '100%', opacity: '0' }, 1000, function () {
+                sections[5].className = '';
+            });
+            sections[4].className = 'active';
+            $("#pomegranate").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            currentSectionIndex--;
+        }
+    }
+
+    function movingDown() {
+        if (currentSectionIndex == 0) {
+            $(".section-main-image").stop(true, false).animate({ bottom: '100vh', opacity: '0' }, 1500);
+            $("#ourStory").stop(true, false).fadeIn(1000);
+            currentSectionIndex++;
+        }
+        else if (currentSectionIndex == 1) {
+            $("#ourStory").stop(true, false).fadeOut(1500, function () {
+                $("#vodkaRaspberry").stop(true, false).fadeIn(1000);
+            });
+            //$("#vodkaRaspberry").animate({ top: '0vh', display: 'block'}, 1500);
+            currentSectionIndex++;
+        }
+        else if (currentSectionIndex == 2) {
+            $(".section-main").animate({ left: '-100%', opacity: '0' }, 1000, function () {
+                sections[0].className = '';
+
+            });
+            sections[1].className = 'active';
+            $("#applePear").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%" });
+            $("#applePear").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            currentSectionIndex++;
+        }
+        else if (currentSectionIndex == 3) {
+            $("#applePear").animate({ left: '-100%', opacity: '0' }, 1000, function () {
+                sections[1].className = '';
+            });
+            sections[2].className = 'active';
+            $("#passionfruit").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%" });
+            $("#passionfruit").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            currentSectionIndex++;
+        }
+        else if (currentSectionIndex == 4) {
+            $("#passionfruit").animate({ left: '-100%', opacity: '0' }, 1000, function () {
+                sections[2].className = '';
+            });
+            sections[3].className = 'active';
+            //$("#applePear").css({ "display": "block" });
+            //$("#applePear").css({ "animation": "run 5s" });
+            $("#guavapink").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%" });
+            $("#guavapink").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+
+            currentSectionIndex++;
+        }
+        else if (currentSectionIndex == 5) {
+            $("#guavapink").animate({ left: '-100%', opacity: '0' }, 1000, function () {
+                sections[3].className = '';
+            });
+            sections[4].className = 'active';
+            //$("#applePear").css({ "display": "block" });
+            //$("#applePear").css({ "animation": "run 5s" });
+            $("#pomegranate").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%" });
+            $("#pomegranate").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+
+            currentSectionIndex++;
+        }
+        else if (currentSectionIndex == 6) {
+            $("#pomegranate").animate({ left: '-100%', opacity: '0' }, 1000, function () {
+                sections[4].className = '';
+            });
+            sections[5].className = 'active';
+            //$("#applePear").css({ "display": "block" });
+            //$("#applePear").css({ "animation": "run 5s" });
+            $("#aboutUs").css({ "display": "block", "position": "relative", "opacity": 0, "top": "100%" });
+            $("#aboutUs").stop(true, false).animate({ top: '0px', opacity: '1' }, 1000);
+
+            currentSectionIndex++;
+        }
+    }
+
+    document.addEventListener('touchend', e => {
+        movingDown();
        
     });
 
@@ -462,62 +591,7 @@
 
         if (e.wheelDeltaY > 0) {
             // wheel up
-            if (currentSectionIndex == 1) {
-                $("#vodkaRaspberry").stop(true, false).animate({ bottom: '100vh', opacity: '1' }, 1500);
-                $("#ourStory").stop(true, false).fadeOut(1000, function () {
-                    //$(".section-main-image").css({ "display": "block" });
-                    $("#wellcomeMsg").css({ "display": "block" });
-                    $(".section-main-image").css({ "bottom": "100vh" });
-                    $(".section-main-image").stop(true, false).animate({ bottom: '0vh', opacity: '1' }, 1500);
-                });
-                currentSectionIndex--;
-            }
-            else if (currentSectionIndex == 2) {
-                document.getElementById("vodkaRaspberry").style.display = "none";
-                $("#ourStory").stop(true, false).fadeIn(1000);
-                currentSectionIndex--;
-            }
-            else if (currentSectionIndex == 3) {
-                $("#applePear").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
-                    sections[1].className = '';
-                });
-                sections[0].className = 'active';
-                document.getElementById("vodkaRaspberry").style.display = "block";
-                $(".section-main").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
-                currentSectionIndex--;
-            }
-            else if (currentSectionIndex == 4) {
-                $("#passionfruit").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
-                    sections[2].className = '';
-                });
-                sections[1].className = 'active';
-                $("#applePear").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
-                currentSectionIndex--;
-            }
-            else if (currentSectionIndex == 5) {
-                $("#guavapink").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
-                    sections[3].className = '';
-                });
-                sections[2].className = 'active';
-                $("#passionfruit").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
-                currentSectionIndex--;
-            }
-            else if (currentSectionIndex == 6) {
-                $("#pomegranate").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
-                    sections[4].className = '';
-                });
-                sections[3].className = 'active';
-                $("#guavapink").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
-                currentSectionIndex--;
-            }
-            else if (currentSectionIndex == 7) {
-                $("#aboutUs").stop(true, false).animate({ top: '100%', opacity: '0' }, 1000, function () {
-                    sections[5].className = '';
-                });
-                sections[4].className = 'active';
-                $("#pomegranate").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
-                currentSectionIndex--;
-            }
+            movingUp();
             /*if (currentSectionIndex == 0) {
                 $("#section-main-image").slideUp("slow");
             }
@@ -529,73 +603,7 @@
             
         } else if (e.wheelDeltaY < 0) {
             // wheel down
-            if (currentSectionIndex == 0) {
-                $(".section-main-image").stop(true, false).animate({ bottom: '100vh', opacity: '0' }, 1500);
-                $("#ourStory").stop(true, false).fadeIn(1000);
-                currentSectionIndex++;
-            }
-            else if (currentSectionIndex == 1) {
-                $("#ourStory").stop(true, false).fadeOut(1500, function () {
-                    $("#vodkaRaspberry").stop(true, false).fadeIn(1000);
-                });
-                //$("#vodkaRaspberry").animate({ top: '0vh', display: 'block'}, 1500);
-                currentSectionIndex++;
-            }
-            else if (currentSectionIndex == 2) {
-                $(".section-main").animate({ left: '-100%', opacity: '0' }, 1000, function () {
-                    sections[0].className = '';
-                    
-                });
-                sections[1].className = 'active';
-                $("#applePear").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%" });
-                $("#applePear").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);        
-                currentSectionIndex++;
-            }
-            else if (currentSectionIndex == 3) {
-                $("#applePear").animate({ left: '-100%', opacity: '0' }, 1000, function () {
-                    sections[1].className = '';
-                });
-                sections[2].className = 'active';
-                $("#passionfruit").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%" });
-                $("#passionfruit").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
-                currentSectionIndex++;
-            }
-            else if (currentSectionIndex == 4) {
-                $("#passionfruit").animate({ left: '-100%', opacity: '0' }, 1000, function () {
-                    sections[2].className = '';
-                });
-                sections[3].className = 'active';
-                //$("#applePear").css({ "display": "block" });
-                //$("#applePear").css({ "animation": "run 5s" });
-                $("#guavapink").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%" });
-                $("#guavapink").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
-
-                currentSectionIndex++;
-            }
-            else if (currentSectionIndex == 5) {
-                $("#guavapink").animate({ left: '-100%', opacity: '0' }, 1000, function () {
-                    sections[3].className = '';
-                });
-                sections[4].className = 'active';
-                //$("#applePear").css({ "display": "block" });
-                //$("#applePear").css({ "animation": "run 5s" });
-                $("#pomegranate").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%" });
-                $("#pomegranate").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
-
-                currentSectionIndex++;
-            }
-            else if (currentSectionIndex == 6) {
-                $("#pomegranate").animate({ left: '-100%', opacity: '0' }, 1000, function () {
-                    sections[4].className = '';
-                });
-                sections[5].className = 'active';
-                //$("#applePear").css({ "display": "block" });
-                //$("#applePear").css({ "animation": "run 5s" });
-                $("#aboutUs").css({ "display": "block", "position": "relative", "opacity": 0, "top": "100%" });
-                $("#aboutUs").stop(true, false).animate({ top: '0px', opacity: '1' }, 1000);
-
-                currentSectionIndex++;
-            }
+            movingDown();
             //sections[currentSectionIndex].className = '';
             //sections[currentSectionIndex].className = 'active';
         }
