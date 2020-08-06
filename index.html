@@ -575,6 +575,15 @@
              
     });
 
+    document.addEventListener('keyup', function (e) {
+        if (e.keyCode == 38) {
+            movingUp();
+        }
+        else if (e.keyCode == 40) {
+            movingDown();
+        }
+    });
+
     var scrolled = 0;
     document.addEventListener('mousewheel', e => {
         

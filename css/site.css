@@ -162,7 +162,7 @@ section.active {
     top: calc(50% - 12px);
     position: fixed;
     font-weight: bold;
-    left: -20px;
+    left: -60px;
     font-size: 48px;
 }
 
@@ -173,7 +173,7 @@ section.active {
     top: calc(50% - 12px);
     position: fixed;
     font-weight: bold;
-    right: -20px;
+    right: -60px;
     font-size: 48px;
 }
 
@@ -245,7 +245,6 @@ section.active {
 }
 
 .product-description-imgs {
-    display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
