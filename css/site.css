@@ -238,7 +238,7 @@ section.active {
 }
 
 .product-description-info {
-    font-size: 14px;
+    font-size: 20px;
     color: black;
     padding: 5px;
     margin: 0px;
@@ -311,7 +311,7 @@ section.active {
 }
 
 /********************************************* Big PC styles *******************************************************************/
-@media all and (min-width: 1500px) {
+@media all and (min-width: 1600px) {
     .section-product-img {
         width: 300px;
         transition: width 0.3s;
@@ -445,9 +445,9 @@ section.active {
             transition: width 0.3s;
         }
 
-            .section-product-img:hover {
-                width: 185px;
-            }
+        .product-description-info {
+            font-size: 18px;
+        }
 
         .section-product-detail-mobile {
             display: block
