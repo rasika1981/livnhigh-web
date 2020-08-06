@@ -311,7 +311,7 @@ section.active {
 }
 
 /********************************************* Big PC styles *******************************************************************/
-@media all and (max-width: 1500px) {
+@media all and (min-width: 1500px) {
     .section-product-img {
         width: 300px;
         transition: width 0.3s;
