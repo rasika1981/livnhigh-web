@@ -65,13 +65,28 @@
     <div id="section-1" class="bg blue">
 <section class="active" data-section="0">
     <div id="homePanel" class="section-main">
-        <div id="wellcomeMsg" class="section-main-image">
-            <div class="row" style="margin-right: 0px;">
-                <div class="col-2"></div>
-                <div class="col section-main-message">
-                    <h1>The Fun<br/>Never Stops</h1>
+        <div id="wellcomeMsgPanel">
+            <div id="wellcomeCanes" class="section-main-image">
+            </div>
+            <div id="wellcomeMsg">
+                <div class="row" style="margin-right: 0px;">
+                    <div class="col-2"></div>
+                    <div class="col section-main-message">
+                        <h1>The Fun<br />Never Stops</h1>
+                    </div>
+                    <div class="col-2"></div>
                 </div>
-                <div class="col-2"></div>
+                <div class="row" style="margin-right: 0px;">
+                    <div class="col-2"></div>
+                    <div class="col text-center">
+                        <div id="wellcomTagline" style="display: none">
+                            <h4>
+                                With zero sugar and less calories, worry less about what you're drinking and focus on having a great time with friends.
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
             </div>
         </div>
         <div id="ourStory" style="display:none;">
@@ -436,8 +451,8 @@
 
     function movingUp() {
         if (currentSectionIndex == 1) {
-            $("#vodkaRaspberry").stop(true, false).animate({ bottom: '100vh', opacity: '1' }, 1500);
-            $("#ourStory").stop(true, false).fadeOut(1000, function () {
+            //$("#vodkaRaspberry").stop(true, false).animate({ bottom: '100vh', opacity: '1' }, 1500);
+            $("#wellcomTagline").stop(true, false).fadeOut(1000, function () {
                 //$(".section-main-image").css({ "display": "block" });
                 $("#wellcomeMsg").css({ "display": "block" });
                 $(".section-main-image").css({ "bottom": "100vh" });
@@ -447,7 +462,8 @@
         }
         else if (currentSectionIndex == 2) {
             document.getElementById("vodkaRaspberry").style.display = "none";
-            $("#ourStory").stop(true, false).fadeIn(1000);
+            $("#wellcomeMsg").stop(true, false).fadeIn(1500);
+            $("#wellcomTagline").stop(true, false).fadeIn(1000);
             currentSectionIndex--;
         }
         else if (currentSectionIndex == 3) {
@@ -496,11 +512,11 @@
     function movingDown() {
         if (currentSectionIndex == 0) {
             $(".section-main-image").stop(true, false).animate({ bottom: '100vh', opacity: '0' }, 1500);
-            $("#ourStory").stop(true, false).fadeIn(1000);
+            $("#wellcomTagline").stop(true, false).fadeIn(1000);
             currentSectionIndex++;
         }
         else if (currentSectionIndex == 1) {
-            $("#ourStory").stop(true, false).fadeOut(1500, function () {
+            $("#wellcomeMsg").stop(true, false).fadeOut(1500, function () {
                 $("#vodkaRaspberry").stop(true, false).fadeIn(1000);
             });
             //$("#vodkaRaspberry").animate({ top: '0vh', display: 'block'}, 1500);
@@ -659,7 +675,7 @@
         //document.getElementsByClassName("section-main-image").style.display = "none";
         document.getElementById("wellcomeMsg").style.display = "none";
         document.getElementById("vodkaRaspberry").style.display = "none";
-        document.getElementById("ourStory").style.display = "none";
+        //document.getElementById("ourStory").style.display = "none";
     }
 </script>
     </div>
