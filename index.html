@@ -81,7 +81,8 @@
                     <div class="col text-center">
                         <div id="wellcomTagline" style="display: none">
                             <h4>
-                                With zero sugar and less calories, worry less about what you're drinking and focus on having a great time with friends.
+                                With zero sugar and less calories, worry less about what you're drinking<br />
+                                and focus on having a great time with friends.
                             </h4>
                         </div>
                     </div>
@@ -95,7 +96,8 @@
                 <div class="col-6 section-main-sub-message">
                     <h2>Our Product</h2>
                     <p>
-                        With zero sugar and less calories, worry less about what you're drinking and focus on having a great time with friends.
+                        With zero sugar and less calories, worry less about what you're drinking<br /> 
+                        and focus on having a great time with friends.
                     </p>
                 </div>
                 <div class="col"></div>
@@ -109,7 +111,7 @@
                             <div class="col">
                                 <h4 class="section-product-tagline-left">Zero Sugar</h4>
                             </div>
-                            <div class="col">
+                            <div class="col" style="padding-left: 10px; padding-right: 10px;">
                                 <div class="section-product-type-left">
                                     <img src="images/big icons_raspberry.png" align="right" class="section-product-type-img" />
                                     <p class="section-product-name">vodka and raspberry with sparkling water</p>
@@ -176,7 +178,7 @@
                         <div class="col">
                             <h4 class="section-product-tagline-left">Zero Sugar</h4>
                         </div>
-                        <div class="col">
+                        <div class="col" style="padding-left: 10px; padding-right: 10px;">
                             <div class="section-product-type-left">
                                 <img src="images/big_icons_apple_pear.png" align="right" class="section-product-type-img" />
                                 <p class="section-product-name">vodka, apple and pear with sparkling water</p>
@@ -508,12 +510,12 @@
             currentSectionIndex--;
         }
         else if (currentSectionIndex == 3) {
-            $("#applePear").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
+            $("#applePear").stop(true, false).fadeOut( 1000, function () {
                 sections[1].className = '';
             });
             sections[0].className = 'active';
             document.getElementById("vodkaRaspberry").style.display = "block";
-            $(".section-main").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            $(".section-main").stop(true, false).css({ display: "none" }).fadeIn(1500);
             currentSectionIndex--;
         }
         else if (currentSectionIndex == 4) {
@@ -572,7 +574,7 @@
             currentSectionIndex++;
         }
         else if (currentSectionIndex == 2) {
-            $(".section-main").animate({ left: '-100%', opacity: '0' }, 1000, function () {
+            /*$(".section-main").animate({ left: '-100%', opacity: '0' }, 1000, function () {
                 sections[0].className = '';
                 sections[1].className = 'active';
                 //$("#applePear").css({ "display": "block", "opacity": 0, "left": "100vw" });
@@ -583,7 +585,14 @@
             });
             sections[1].className = 'active';
             $("#applePear").css({ "display": "block", "opacity": 0, "left": "100vw", position: 'fixed' });
-            $("#applePear").animate({ left: '0px', opacity: '1' }, 1000);
+            $("#applePear").animate({ left: '0px', opacity: '1' }, 1000);*/
+
+            $("#homePanel").fadeOut(1500, function () {
+                sections[0].className = '';
+            });
+            sections[1].className = 'active';
+            $("#applePear").css({ display: "none" }).fadeIn(1500);
+            //$("#applePear").animate({ left: 200, opacity: "show" }, 1500);
             currentSectionIndex++;
         }
         else if (currentSectionIndex == 3) {
