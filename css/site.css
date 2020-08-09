@@ -42,7 +42,7 @@ h4 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 /********************************************Header Styles****************************************************/
@@ -323,6 +323,12 @@ section.active {
     background-color: black;
 }
 
+.joinus-panel {
+    padding-top: 200px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
 /************************************************Join Club**********************************************************************/
 input[type=text], select, textarea {
     width: 100%;
@@ -459,6 +465,12 @@ input[type=submit] {
         .col-25, .col-75, input[type=submit] {
             width: 100%;
             margin-top: 0;
+        }
+
+        .joinus-panel {
+            padding-top: 120px;
+            padding-left: 20px;
+            padding-right: 5px;
         }
     }
 

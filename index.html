@@ -35,7 +35,7 @@
                         <a id="homeMenue" href="#">Home</a>
                         <a id="productsMenue" href="#">Products</a>
                         <a id="aboutUsMenue" href="#">About Us</a>
-                        <a id="contactUsMene" href="#">Contact Us</a>
+                        <a id="joinUsMeneue" href="#">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -445,7 +445,7 @@
 </section>
 <section data-section="6">
     <div id="joinClub" style="display: none;" class="joinus-bg">
-        <div style="padding-top: 120px; padding-left: 20px; padding-right: 5px;">
+        <div class="joinus-panel">
             <div class="row" style="margin-right: 0px;">
                 <h2 style="text-align: center; width: 100%">Join With Livnhigh Club</h2>
                 <p>This is Join With Livnhigh Club discription.</p>
@@ -474,7 +474,7 @@
                     <input type="text" id="lname" name="lastname" placeholder="Your email address..">
                 </div>
             </div>
-            <div class="row" style="margin-right: 0px; margin-top: 30px;">
+            <div class="row" style="margin-right: 0px; margin-top: 30px;display: flex; align-items: center; justify-content: center;">
                 <input type="submit" value="Submit">
             </div>
         </div>           
@@ -491,6 +491,7 @@
             //$("#vodkaRaspberry").stop(true, false).animate({ bottom: '100vh', opacity: '1' }, 1500);
             $("#wellcomTagline").stop(true, false).fadeOut(1000, function () {
                 //$(".section-main-image").css({ "display": "block" });
+                $("#wellcomeCanes").css({ display: 'block' });
                 $("#wellcomeMsg").css({ "display": "block" });
                 $(".section-main-image").css({ "bottom": "100vh" });
                 $(".section-main-image").stop(true, false).animate({ bottom: '0vh', opacity: '1' }, 1500);
@@ -499,8 +500,11 @@
         }
         else if (currentSectionIndex == 2) {
             document.getElementById("vodkaRaspberry").style.display = "none";
-            $("#wellcomeMsg").stop(true, false).fadeIn(1500);
-            $("#wellcomTagline").stop(true, false).fadeIn(1000);
+            $("#wellcomeCanes").css({ display: 'none' })
+            
+            $("#wellcomeMsgPanel").css({ display: 'block' });
+            $("#wellcomeMsg").css({ display: 'block' }).fadeIn(1500);
+            $("#wellcomTagline").css({ display: 'block' }).fadeIn(1000);
             currentSectionIndex--;
         }
         else if (currentSectionIndex == 3) {
@@ -549,7 +553,7 @@
                 sections[6].className = '';
             });
             sections[5].className = 'active';
-            $("#aboutUs").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            $("#aboutUs").css({ display: 'block' }).animate({ top: '0px', opacity: '1' }, 1000);
             currentSectionIndex--;
         }
     }
@@ -622,19 +626,19 @@
             sections[5].className = 'active';
             //$("#applePear").css({ "display": "block" });
             //$("#applePear").css({ "animation": "run 5s" });
-            $("#aboutUs").css({ "display": "block", "position": "relative", "opacity": 0, "top": "100%", position: 'fixed'  });
+            $("#aboutUs").css({ "display": "block", "position": "relative", "opacity": 0, "top": "0%", position: 'fixed'  });
             $("#aboutUs").stop(true, false).animate({ top: '0px', opacity: '1' }, 1000);
 
             currentSectionIndex++;
         }
         else if (currentSectionIndex == 7) {
-            $("#aboutUs").animate({ left: '-100%', opacity: '0' }, 1000, function () {
+            $("#aboutUs").animate({ top: '100%', opacity: '0' }, 1000, function () {
                 sections[5].className = '';
             });
             sections[6].className = 'active';
             //$("#applePear").css({ "display": "block" });
             //$("#applePear").css({ "animation": "run 5s" });
-            $("#joinClub").css({ "display": "block", "position": "relative", "opacity": 0, "top": "100%", position: 'fixed'  });
+            $("#joinClub").css({ "display": "block", "position": "relative", "opacity": 0, "top": "0%", position: 'fixed'  });
             $("#joinClub").stop(true, false).animate({ top: '0px', opacity: '1' }, 1000);
 
             currentSectionIndex++;
@@ -694,6 +698,7 @@
 
             sections[0].className = "active";
 
+            document.getElementById("wellcomeMsgPanel").style.display = "block";
             document.getElementById("wellcomeMsg").style.display = "block";
             $(".section-main").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
             $(".section-main-image").stop(true, false).animate({ bottom: '0vh', opacity: '1' }, 1500);
@@ -717,27 +722,39 @@
 
             sections[5].className = 'active';
 
-            document.getElementById("aboutUs").style.display = "block";
+            $("#aboutUs").css({ display: 'block' }).animate({ top: '0px', opacity: '1' }, 1000);
 
             currentSectionIndex = 7;
+        })
+
+        $('#joinUsMeneue').click(function () {
+            hideItems();
+
+            sections[6].className = 'active';
+
+            document.getElementById("joinClub").style.display = "block";
+
+            currentSectionIndex = 8;
         })
     })
 
     function hideItems() {
         closeNav();
 
-        sections[0].className = ' ';
+        sections[0].className = '';
         sections[1].className = '';
         sections[2].className = '';
         sections[3].className = '';
         sections[4].className = '';
         sections[5].className = '';
+        sections[6].className = '';
 
         //document.getElementsByClassName("section-main").style.display = "none";
         //document.getElementsByClassName("section-main-image").style.display = "none";
         document.getElementById("wellcomeMsg").style.display = "none";
+        document.getElementById("wellcomTagline").style.display = "none";
         document.getElementById("vodkaRaspberry").style.display = "none";
-        //document.getElementById("ourStory").style.display = "none";
+        document.getElementById("wellcomeMsgPanel").style.display = "none";
     }
 </script>
     </div>
