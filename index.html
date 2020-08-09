@@ -570,11 +570,16 @@
         else if (currentSectionIndex == 2) {
             $(".section-main").animate({ left: '-100%', opacity: '0' }, 1000, function () {
                 sections[0].className = '';
-
+                sections[1].className = 'active';
+                //$("#applePear").css({ "display": "block", "opacity": 0, "left": "100vw" });
+                //$("#applePear").animate({ left: '0px', opacity: '1' }, 1000);
+                
+                //$("#applePear").css({ left: 1000, position: 'absolute'})  // Set the left to its calculated position
+                //    .animate({ "left": "0px" }, "slow");
             });
             sections[1].className = 'active';
-            $("#applePear").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%" });
-            $("#applePear").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            $("#applePear").css({ "display": "block", "opacity": 0, "left": "100vw", position: 'fixed' });
+            $("#applePear").animate({ left: '0px', opacity: '1' }, 1000);
             currentSectionIndex++;
         }
         else if (currentSectionIndex == 3) {
@@ -582,7 +587,7 @@
                 sections[1].className = '';
             });
             sections[2].className = 'active';
-            $("#passionfruit").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%" });
+            $("#passionfruit").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%", position: 'fixed'  });
             $("#passionfruit").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
             currentSectionIndex++;
         }
@@ -593,7 +598,7 @@
             sections[3].className = 'active';
             //$("#applePear").css({ "display": "block" });
             //$("#applePear").css({ "animation": "run 5s" });
-            $("#guavapink").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%" });
+            $("#guavapink").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%", position: 'fixed'  });
             $("#guavapink").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
 
             currentSectionIndex++;
@@ -605,7 +610,7 @@
             sections[4].className = 'active';
             //$("#applePear").css({ "display": "block" });
             //$("#applePear").css({ "animation": "run 5s" });
-            $("#pomegranate").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%" });
+            $("#pomegranate").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%", position: 'fixed'  });
             $("#pomegranate").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
 
             currentSectionIndex++;
@@ -617,7 +622,7 @@
             sections[5].className = 'active';
             //$("#applePear").css({ "display": "block" });
             //$("#applePear").css({ "animation": "run 5s" });
-            $("#aboutUs").css({ "display": "block", "position": "relative", "opacity": 0, "top": "100%" });
+            $("#aboutUs").css({ "display": "block", "position": "relative", "opacity": 0, "top": "100%", position: 'fixed'  });
             $("#aboutUs").stop(true, false).animate({ top: '0px', opacity: '1' }, 1000);
 
             currentSectionIndex++;
@@ -629,7 +634,7 @@
             sections[6].className = 'active';
             //$("#applePear").css({ "display": "block" });
             //$("#applePear").css({ "animation": "run 5s" });
-            $("#joinClub").css({ "display": "block", "position": "relative", "opacity": 0, "top": "100%" });
+            $("#joinClub").css({ "display": "block", "position": "relative", "opacity": 0, "top": "100%", position: 'fixed'  });
             $("#joinClub").stop(true, false).animate({ top: '0px', opacity: '1' }, 1000);
 
             currentSectionIndex++;

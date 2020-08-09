@@ -168,7 +168,7 @@ section.active {
     top: calc(50% - 12px);
     position: fixed;
     font-weight: bold;
-    left: -60px;
+    left: -65px;
     font-size: 48px;
 }
 
