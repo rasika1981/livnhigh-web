@@ -35,7 +35,7 @@
                         <a id="homeMenue" href="#">Home</a>
                         <a id="productsMenue" href="#">Products</a>
                         <a id="aboutUsMenue" href="#">About Us</a>
-                        <a id="joinUsMeneue" href="#">Contact Us</a>
+                        <a id="joinUsMeneue" href="#">Join With Us</a>
                     </div>
                 </div>
             </div>
@@ -170,8 +170,8 @@
     </div>
 </section>
 <section data-section="1">
-    <div id="applePear" style="display: block;" class="applePear-bg">
-        <div style="height:70%; width: 100%">
+    <div id="applePearPanel" style="display: block;" class="applePear-bg">
+        <div id="applePear" style="display: block; height:70%; width: 100%">
             <div class="section-product">
                 <div class="section-product-detail-pc">
                     <div class="row">
@@ -519,31 +519,52 @@
             currentSectionIndex--;
         }
         else if (currentSectionIndex == 4) {
-            $("#passionfruit").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
+            $("#passionfruit").stop(true, false).fadeOut(1000, function () {
                 sections[2].className = '';
             });
             sections[1].className = 'active';
-            $("#applePear").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            //document.getElementById("vodkaRaspberry").style.display = "block";
+            $("#applePear").stop(true, false).css({ display: "none" }).fadeIn(1500);
             currentSectionIndex--;
+            //$("#passionfruit").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
+            //    sections[2].className = '';
+            //});
+            //sections[1].className = 'active';
+            //$("#applePear").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            //currentSectionIndex--;
         }
         else if (currentSectionIndex == 5) {
-            $("#guavapink").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
+            $("#guavapink").stop(true, false).fadeOut(1000, function () {
                 sections[3].className = '';
             });
             sections[2].className = 'active';
-            $("#passionfruit").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            $("#passionfruit").stop(true, false).css({ display: "none" }).fadeIn(1500);
             currentSectionIndex--;
+
+            //$("#guavapink").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
+            //    sections[3].className = '';
+            //});
+            //sections[2].className = 'active';
+            //$("#passionfruit").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            //currentSectionIndex--;
         }
         else if (currentSectionIndex == 6) {
-            $("#pomegranate").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
+            $("#pomegranate").stop(true, false).fadeOut(1000, function () {
                 sections[4].className = '';
             });
             sections[3].className = 'active';
-            $("#guavapink").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            $("#guavapink").stop(true, false).css({ display: "none" }).fadeIn(1500);
             currentSectionIndex--;
+
+            //$("#pomegranate").stop(true, false).animate({ left: '100%', opacity: '0' }, 1000, function () {
+            //    sections[4].className = '';
+            //});
+            //sections[3].className = 'active';
+            //$("#guavapink").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            //currentSectionIndex--;
         }
         else if (currentSectionIndex == 7) {
-            $("#aboutUs").stop(true, false).animate({ top: '100%', opacity: '0' }, 1000, function () {
+            $("#aboutUs").stop(true, false).animate({ left: '100%' }, 1000, function () {
                 sections[5].className = '';
             });
             sections[4].className = 'active';
@@ -551,11 +572,11 @@
             currentSectionIndex--;
         }
         else if (currentSectionIndex == 8) {
-            $("#joinClub").stop(true, false).animate({ top: '100%', opacity: '0' }, 1000, function () {
+            $("#joinClub").stop(true, false).animate({ left: '100%' }, 1000, function () {
                 sections[6].className = '';
             });
             sections[5].className = 'active';
-            $("#aboutUs").css({ display: 'block' }).animate({ top: '0px', opacity: '1' }, 1000);
+            $("#aboutUs").css({ display: 'block' }).animate({ left: '0px', opacity: '1' }, 1000);
             currentSectionIndex--;
         }
     }
@@ -591,64 +612,78 @@
                 sections[0].className = '';
             });
             sections[1].className = 'active';
-            $("#applePear").css({ display: "none" }).fadeIn(1500);
+            $("#applePearPanel").css({ display: "block" });
+            $("#applePear").css({ display: "none" }).fadeIn(1000);
             //$("#applePear").animate({ left: 200, opacity: "show" }, 1500);
             currentSectionIndex++;
         }
         else if (currentSectionIndex == 3) {
-            $("#applePear").animate({ left: '-100%', opacity: '0' }, 1000, function () {
+            $("#applePear").fadeOut(1000, function () {
                 sections[1].className = '';
+                ;
             });
-            sections[2].className = 'active';
-            $("#passionfruit").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%", position: 'fixed'  });
-            $("#passionfruit").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            sections[2].className = 'active'
+            $("#passionfruit").css({ display: "block" });
+            $("#passionfruit").css({ display: "none" }).fadeIn(1000);
+            
+            
+            //$("#applePear").animate({ left: '-100%', opacity: '0' }, 1000, function () {
+            //    sections[1].className = '';
+            //});
+            //sections[2].className = 'active';
+            //$("#passionfruit").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%", position: 'fixed'  });
+            //$("#passionfruit").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
             currentSectionIndex++;
         }
         else if (currentSectionIndex == 4) {
-            $("#passionfruit").animate({ left: '-100%', opacity: '0' }, 1000, function () {
+            $("#passionfruit").fadeOut(1000, function () {
                 sections[2].className = '';
             });
-            sections[3].className = 'active';
-            //$("#applePear").css({ "display": "block" });
-            //$("#applePear").css({ "animation": "run 5s" });
-            $("#guavapink").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%", position: 'fixed'  });
-            $("#guavapink").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            sections[3].className = 'active'
+            $("#guavapink").css({ display: "block" });
+            $("#guavapink").css({ display: "none" }).fadeIn(1000);
+            //$("#passionfruit").animate({ left: '-100%', opacity: '0' }, 1000, function () {
+            //    sections[2].className = '';
+            //});
+            //sections[3].className = 'active';
+            //$("#guavapink").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%", position: 'fixed'  });
+            //$("#guavapink").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
 
             currentSectionIndex++;
         }
         else if (currentSectionIndex == 5) {
-            $("#guavapink").animate({ left: '-100%', opacity: '0' }, 1000, function () {
+            $("#guavapink").fadeOut(1000, function () {
                 sections[3].className = '';
             });
-            sections[4].className = 'active';
-            //$("#applePear").css({ "display": "block" });
-            //$("#applePear").css({ "animation": "run 5s" });
-            $("#pomegranate").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%", position: 'fixed'  });
-            $("#pomegranate").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
+            sections[4].className = 'active'
+            $("#pomegranate").css({ display: "block" });
+            $("#pomegranate").css({ display: "none" }).fadeIn(1000);
+            //$("#guavapink").animate({ left: '-100%', opacity: '0' }, 1000, function () {
+            //    sections[3].className = '';
+            //});
+            //sections[4].className = 'active';
+            //$("#pomegranate").css({ "display": "block", "position": "relative", "opacity": 0, "left": "100%", position: 'fixed'  });
+            //$("#pomegranate").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
 
             currentSectionIndex++;
         }
         else if (currentSectionIndex == 6) {
-            $("#pomegranate").animate({ left: '-100%', opacity: '0' }, 1000, function () {
+            $("#pomegranate").animate({ left: '-100%' }, 1000, function () {
                 sections[4].className = '';
             });
             sections[5].className = 'active';
-            //$("#applePear").css({ "display": "block" });
-            //$("#applePear").css({ "animation": "run 5s" });
-            $("#aboutUs").css({ "display": "block", "position": "relative", "opacity": 0, "top": "0%", position: 'fixed'  });
-            $("#aboutUs").stop(true, false).animate({ top: '0px', opacity: '1' }, 1000);
+            $("#aboutUs").css({ "display": "block", "position": "relative", "left": "100%", position: 'fixed'  });
+            $("#aboutUs").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
 
             currentSectionIndex++;
         }
         else if (currentSectionIndex == 7) {
-            $("#aboutUs").animate({ top: '100%', opacity: '0' }, 1000, function () {
+            $("#aboutUs").animate({ left: '-100%' }, 1000, function () {
                 sections[5].className = '';
             });
             sections[6].className = 'active';
-            //$("#applePear").css({ "display": "block" });
-            //$("#applePear").css({ "animation": "run 5s" });
-            $("#joinClub").css({ "display": "block", "position": "relative", "opacity": 0, "top": "0%", position: 'fixed'  });
-            $("#joinClub").stop(true, false).animate({ top: '0px', opacity: '1' }, 1000);
+            $("#joinClub").css({ "display": "block", "position": "relative", "left": "100%", position: 'fixed'  });
+            $("#joinClub").stop(true, false).animate({ left: '0px', opacity: '1' }, 1000);
 
             currentSectionIndex++;
         }
@@ -731,7 +766,7 @@
 
             sections[5].className = 'active';
 
-            $("#aboutUs").css({ display: 'block' }).animate({ top: '0px', opacity: '1' }, 1000);
+            $("#aboutUs").css({ display: 'block' }).animate({ left: '0px', opacity: '1' }, 1000);
 
             currentSectionIndex = 7;
         })
@@ -741,7 +776,7 @@
 
             sections[6].className = 'active';
 
-            document.getElementById("joinClub").style.display = "block";
+            $("#joinClub").css({ display: 'block' }).animate({ left: '0px', opacity: '1' }, 1000);
 
             currentSectionIndex = 8;
         })
